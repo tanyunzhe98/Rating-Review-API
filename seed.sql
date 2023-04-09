@@ -14,3 +14,7 @@ DELIMITER ',' CSV HEADER;
 COPY reviews_photos
 FROM '/Users/yunzhetan/Downloads/reviews_photos.csv'
 DELIMITER ',' CSV HEADER;
+
+SELECT setval('reviews_review_id_seq', (SELECT max(review_id) FROM reviews));
+SELECT setval('reviews_photos_photo_id_seq', (SELECT max(photo_id) FROM reviews_photos));
+SELECT setval('characteristic_reviews_id_seq', (SELECT max(id) FROM characteristic_reviews));

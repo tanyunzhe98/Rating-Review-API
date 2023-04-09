@@ -24,9 +24,17 @@ app.put(`/review/:review_id/helpful`, (req, res) => {
   controller.updateReviewHelpful(req, res);
 });
 
+app.put(`/review/:review_id/report`, (req, res) => {
+  //console.log("running");
+  controller.reportReview(req, res);
+});
+
 app.get("/reviews/meta", (req, res) => {
   controller.getReviewsMeta(req, res);
 });
 
+app.post("/reviews/", (req, res) => {
+  controller.postForm(req, res);
+});
 
 app.listen(port, () => {console.log(`Server is listening at http://localhost:${port}`);});
