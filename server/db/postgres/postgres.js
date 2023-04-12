@@ -1,6 +1,11 @@
 const { Client } = require('pg');
 const express = require('express');
 const router = express.Router();
+const config = require('../../../config/myconfig.js');
+const db = config.db;
+const pw = config.pw;
+
+
 const client = new Client({
   host: 'localhost',
   port: 5432,
