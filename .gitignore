@@ -1,8 +1,4 @@
 node_modules
 config/myConfig.js
-webpack.config.js
-public/
 package-lock.json
-.env
-.babelrc
 **/.DS_Store
