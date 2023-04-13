@@ -30,7 +30,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: ./Rating-Review-API/.Dockerfile
+          context: .
           push: true
           tags: tanyunzhe/sdc-review:latest
 
