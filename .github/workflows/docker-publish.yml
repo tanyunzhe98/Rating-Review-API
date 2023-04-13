@@ -39,7 +39,7 @@ jobs:
         with:
           host: ec2-3-135-221-34.us-east-2.compute.amazonaws.com
           username: ubuntu
-          key: "house-of-ares.pem"
+          private_key: $HOME/.ssh/id_rsa
           script: |
             docker pull tanyunzhe/sdc-review:latest
             docker run -p 3000:3000 tanyunzhe/sdc-review:latest
