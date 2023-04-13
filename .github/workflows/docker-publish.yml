@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          dockerfile: ./.Dockerfile
+          dockerfile: /.github/workflows/.Dockerfile
           push: true
           tags: tanyunzhe/sdc-review:latest
 
