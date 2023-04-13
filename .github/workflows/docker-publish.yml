@@ -36,10 +36,5 @@ jobs:
 
       - name: SSH to EC2 instance and run Docker container
         uses: appleboy/ssh-action@master
-        with:
-          host: ec2-3-135-221-34.us-east-2.compute.amazonaws.com
-          username: ubuntu
-          private_key: $HOME/.ssh/id_rsa
-          script: |
-            docker pull tanyunzhe/sdc-review:latest
-            docker run -p 3000:3000 tanyunzhe/sdc-review:latest
+        run: |
+          ssh -i "/Users/yunzhetan/AWSLaunch/house-of-ares.pem" ubuntu@ec2-3-135-221-34.us-east-2.compute.amazonaws.com "docker pull tanyunzhe/sdc-review:latest; docker run -p 3000:3000 tanyunzhe/sdc-review:latest"
