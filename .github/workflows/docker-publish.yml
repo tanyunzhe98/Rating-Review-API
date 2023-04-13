@@ -39,7 +39,7 @@ jobs:
         with:
           host: ec2-3-135-221-34.us-east-2.compute.amazonaws.com
           username: ubuntu
-          password: ${{ secrets.EC2_PASSWORD }}
+          key: /Users/yunzhetan/AWSLaunch/house-of-ares.pem
           script: |
             docker pull tanyunzhe/sdc-review:latest
-            docker run -p 3000:80 --env-file env.list tanyunzhe/sdc-review:latest
+            docker run -p 3000:3000 tanyunzhe/sdc-review:latest
