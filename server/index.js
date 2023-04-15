@@ -5,9 +5,14 @@ const path = require("path");
 const db = require('./db/postgres/postgres.js');
 const controller = require("./controllers");
 const bodyParser = require('body-parser');
+const apicache = require("apicache");
+const cache = apicache.middleware;
+
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
+
+app.use(cache("2 minutes"));
 
 app.use((req, res, next) => {
   console.log('serving: ', req.method, req.path, req.query);
