@@ -3,9 +3,10 @@ const express = require('express');
 const router = express.Router();
 
 const client = new Client({
-  host: 'localhost',
+  host: '172.31.11.104',
   port: 5432,
   database: 'sdc',
+  user: 'yunzhetan',
   password: '19981024tyz'
 });
 
